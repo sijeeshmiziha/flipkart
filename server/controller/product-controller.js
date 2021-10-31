@@ -13,7 +13,7 @@ export const getProducts = async (request, response) => {
 
 export const getProductById = async (request, response) => {
     try {
-        console.log('Hie')
+        console.log('getting product id')
         const products = await Product.findOne({ 'id': request.params.id });
         response.json(products);
     }catch (error) {
