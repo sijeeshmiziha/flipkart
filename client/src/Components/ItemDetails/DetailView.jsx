@@ -60,14 +60,14 @@ const data = {
 const DetailView = ({ history, match }) => {
     const classes = useStyles();
     const fassured = 'https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/fa_62673a.png'
-    // const [ product, setProduct ] = useState(data);
-    // const [ loading, setLoading ] = useState(false);
-    // const { id } = useParams();
+    const [ product, setProduct ] = useState(data);
+    const [ loading, setLoading ] = useState(false);
+    const { id } = useParams();
 
-    // const [ quantity, setQuantity ] = useState(1);
+    const [ quantity, setQuantity ] = useState(1);
 
     const productDetails = useSelector(state => state.getProductDetails);
-    const { loading, product } = productDetails;
+    // const { loading, product } = productDetails;
 
     const dispatch = useDispatch();
     
@@ -76,17 +76,17 @@ const DetailView = ({ history, match }) => {
             dispatch(getProductDetails(match.params.id));
     }, [dispatch, product, match, loading]);
 
-    // useEffect(() => {
-    //     getProductValues();
-    // }, []);
+    useEffect(() => {
+        getProductValues();
+    }, []);
 
-    // const getProductValues = async () => {
-    //     setLoading(true);
-    //     const response = await getProductById(id);
-    //     console.log(response.data);
-    //     setProduct(response.data);
-    //     setLoading(false);
-    // }
+    const getProductValues = async () => {
+        setLoading(true);
+        const response = await getProductById(id);
+        console.log(response.data);
+        setProduct(response.data);
+        setLoading(false);
+    }
 
     return (
         <Box className={classes.component}>

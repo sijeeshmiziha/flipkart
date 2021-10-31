@@ -57,7 +57,7 @@ const ProductDetail = ({ product }) => {
                     </TableRow>
                     <TableRow>
                         <TableCell colSpan={2}>
-                            <img src={adURL} style={{ width: 390 }} />
+                            <img src={adURL} style={{ width: 390 }} alt="" />
                         </TableCell>
                     </TableRow>
                     <TableRow className={classes.smallText}>

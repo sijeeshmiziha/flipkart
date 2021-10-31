@@ -37,10 +37,7 @@ const TotalView = ({ cartItems }) => {
     const [price, setPrice] = useState(0);
     const [discount, setDiscount] = useState(0)
 
-    useEffect(() => {
-        totalAmount();
-    }, [cartItems,totalAmount]);
-    
+
     const totalAmount = () => {
         let price = 0, discount = 0;
         console.log(cartItems);
@@ -52,6 +49,12 @@ const TotalView = ({ cartItems }) => {
         setDiscount(discount);
     }
 
+
+    useEffect(() => {
+        totalAmount();
+    }, [cartItems,totalAmount]);
+    
+    
     return (
         <Box className={classes.component}>
             <Box className={classes.header} style={{borderBottom: '1px solid #f0f0f0'}}>

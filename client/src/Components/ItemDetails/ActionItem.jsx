@@ -49,7 +49,7 @@ const ActionItem = ({ product }) => {
     const dispatch = useDispatch();
 
     const buyNow = async () => {
-        let response = await payUsingPaytm({ amount: 500, email: 'codeforinterview01@gmail.com'});
+        let response = await payUsingPaytm({ amount: 500, email: 'sijeeshmiziha1@gmail.com'});
         var information = {
             action: 'https://securegw-stage.paytm.in/order/process',
             params: response    
@@ -64,7 +64,7 @@ const ActionItem = ({ product }) => {
 
     return (
         <Box className={classes.leftContainer}>
-            <img src={product.detailUrl} className={classes.productImage} /><br />
+            <img src={product.detailUrl} className={classes.productImage} alt="" /><br />
             <Button onClick={() => addItemToCart()} className={clsx(classes.button, classes.addToCart)} style={{marginRight: 10}} variant="contained"><Cart />Add to Cart</Button>
             <Button onClick={() => buyNow()} className={clsx(classes.button, classes.buyNow)} variant="contained"><Flash /> Buy Now</Button>
         </Box>

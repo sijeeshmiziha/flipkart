@@ -1,4 +1,4 @@
-import { Box, makeStyles, Grid } from '@material-ui/core';
+import { makeStyles, Grid } from '@material-ui/core';
 import clsx from 'clsx';
 
 const ImageURL = [
@@ -33,12 +33,12 @@ const MidSection = () => {
                 {
                     ImageURL.map(image => (
                         <Grid item lg={4} md={4} sm={12} xs={12}>
-                            <img src={image} className={classes.image} />
+                            <img src={image} className={classes.image} alt="" />
                         </Grid>
                     ))
                 }
             </Grid>
-            <img src={url} className={clsx(classes.wrapper, classes.help)} style={{width: '100%'}} />
+            <img src={url} className={clsx(classes.wrapper, classes.help)} style={{width: '100%'}} alt="" />
         </>
     )
 }

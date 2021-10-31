@@ -1,4 +1,4 @@
-import { AppBar, Toolbar, makeStyles, Box, Typography, withStyles, IconButton, Drawer, List, ListItem} from '@material-ui/core';
+import { AppBar, Toolbar, makeStyles, Box, Typography, withStyles, IconButton, Drawer, List} from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import CustomButtons from './CustomButtons';
 import Search from './Search';
@@ -96,10 +96,10 @@ const Header = () => {
                 </Drawer>
 
                 <Link to='/' className={classes.component}>
-                    <img src={logoURL} className={classes.logo} />
+                    <img src={logoURL} className={classes.logo} alt="" />
                     <Box component="span" className={classes.container}>
                         <Typography className = {classes.subHeading}>Explore <Box component="span" style={{color:'#FFE500'}}>Plus</Box></Typography>
-                        <img src={subURL} className={classes.subURL} />
+                        <img src={subURL} className={classes.subURL} alt="" />
                     </Box>
                 </Link>
                 <Search />

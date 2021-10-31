@@ -38,7 +38,7 @@ const MidSlide = ({ products }) => {
                 />
             </Box>
             <Box className={classes.rightComponent}>
-                <img src={adURL} style={{width: 232}}/>
+                <img src={adURL} style={{width: 232}} alt="" />
             </Box>
         </Box>
     )

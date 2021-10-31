@@ -67,7 +67,7 @@ const useStyle = makeStyles({
 })
 
 const loginInitialValues = {
-    username: '',
+    email: '',
     password: ''
 };
 
@@ -119,7 +119,7 @@ const LoginDialog = ({ open, setOpen, setAccount }) => {
         else {
             showError(false);
             handleClose();
-            setAccount(login.username);
+            setAccount(response.data.username);
         }
     }
 
@@ -150,7 +150,7 @@ const LoginDialog = ({ open, setOpen, setAccount }) => {
                     {
                         account.view === 'login' ? 
                         <Box className={classes.login}>
-                            <TextField onChange={(e) => onValueChange(e)} name='username' label='Enter Email/Mobile number' />
+                            <TextField onChange={(e) => onValueChange(e)} name='email' label='Enter Email/Mobile number' />
                             { error && <Typography className={classes.error}>Please enter valid Email ID/Mobile number</Typography> }
                             <TextField onChange={(e) => onValueChange(e)} name='password' label='Enter Password' />
                             <Typography className={classes.text}>By continuing, you agree to Flipkart's Terms of Use and Privacy Policy.</Typography>

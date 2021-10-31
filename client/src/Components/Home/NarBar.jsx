@@ -32,7 +32,7 @@ const NavBar = () => {
             {
                 navData.map(temp => (
                     <Box className={classes.container}>
-                        <img src={temp.url} className={classes.image} />
+                        <img src={temp.url} className={classes.image} alt="" />
                         <Typography className={classes.text}>{temp.text}</Typography>
                     </Box>
                 ))
