@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const url = 'http://localhost:8000';
 
-export const authenticateLogin = async (user,response) => {
+export const authenticateLogin = async (user) => {
     try {
         return  await axios.post(`${url}/login`, user) 
     } catch (error) {
@@ -36,3 +36,4 @@ export  const payUsingPaytm = async (data) => {
         console.log('error', error);
     }
 }
+

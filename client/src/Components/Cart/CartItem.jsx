@@ -1,5 +1,4 @@
 import { Card, makeStyles, Box, Typography, Button } from '@material-ui/core';
-import { addEllipsis } from '../../utils/util';
 import clsx from 'clsx';
 import GroupButton from './GroupButton';
 
@@ -49,7 +48,7 @@ const CartItem = ({ item, removeItemFromCart }) => {
                 <GroupButton />
             </Box>
             <Box className={classes.mid}>
-                <Typography>{addEllipsis(item.title.longTitle)}</Typography>
+                <Typography>{item.title.longTitle}</Typography>
                 <Typography className={clsx(classes.greyTextColor, classes.smallText)} style={{ marginTop: 10 }}>Seller:RetailNet
                     <span><img src={fassured} style={{ width: 50, marginLeft: 10 }} alt="" /></span>
                 </Typography>

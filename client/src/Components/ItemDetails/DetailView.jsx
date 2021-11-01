@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Box, Typography, makeStyles, CircularProgress, Button, Grid } from '@material-ui/core';
+import { Box, Typography, makeStyles, Grid } from '@material-ui/core';
 import ProductDetail from './ProductDetail';
 import ActionItem from './ActionItem';
 import { useParams } from 'react-router-dom';
@@ -76,10 +76,7 @@ const DetailView = ({ history, match }) => {
             dispatch(getProductDetails(match.params.id));
     }, [dispatch, product, match, loading]);
 
-    useEffect(() => {
-        getProductValues();
-    }, []);
-
+   
     const getProductValues = async () => {
         setLoading(true);
         const response = await getProductById(id);
@@ -87,6 +84,9 @@ const DetailView = ({ history, match }) => {
         setProduct(response.data);
         setLoading(false);
     }
+    useEffect(() => {
+        getProductValues();
+    }, [getProductValues]);
 
     return (
         <Box className={classes.component}>
@@ -100,7 +100,7 @@ const DetailView = ({ history, match }) => {
                         <Typography>{product.title.longTitle}</Typography>
                         <Typography className={clsx(classes.greyTextColor, classes.smallText)} style={{marginTop: 5}}>
                             8 Ratings & 1 Reviews
-                            <span><img src={fassured} style={{width: 77, marginLeft: 20}} /></span>
+                            <span><img src={fassured} style={{width: 77, marginLeft: 20}} alt="" /></span>
                         </Typography>
                         <Typography>
                             <span className={classes.price}>₹{product.price.cost}</span>&nbsp;&nbsp;&nbsp; 

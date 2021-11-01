@@ -29,7 +29,10 @@ const useStyle = makeStyles(theme => ({
         color: '#7f7f7f',
         marginLeft: 10,
         display: 'flex',
-        alignItems: 'center'
+        alignItems: 'center',
+        [theme.breakpoints.down('sm')]: {
+            display: 'none'
+        }
     },
     image: {
         width: 'auto',
@@ -58,11 +61,7 @@ const useStyle = makeStyles(theme => ({
     wrapper: {
         padding: '25px 15px'
     },
-    timer: {
-        [theme.breakpoints.down('sm')]: {
-            display: 'none'
-        }
-    }
+    
 }));
 
 const MultiSlide = ({ data, timer, title }) => {

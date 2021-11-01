@@ -5,8 +5,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { addToCart, removeFromCart } from '../../redux/actions/cartActions';
 import TotalView from './TotalView';
 import EmptyCart from './EmptyCart';
-import { post } from '../../utils/paytm';
-import { payUsingPaytm } from '../../service/api';
+import { loadRazorpay } from '../../razorpay/loadPayment';
+
 
 const useStyle = makeStyles(theme => ({
     component: {
@@ -64,12 +64,7 @@ const Cart = ({ match, history }) => {
     }
 
     const buyNow = async () => {
-        let response = await payUsingPaytm({ amount: 500, email: 'codeforinterview01@gmail.com'});
-        var information = {
-            action: 'https://securegw-stage.paytm.in/order/process',
-            params: response    
-        }
-        post(information);
+        loadRazorpay(500);
     }
 
     return (
