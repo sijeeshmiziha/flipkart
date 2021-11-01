@@ -2,13 +2,20 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import { v4 as uuid } from 'uuid';
+import mongoose from "mongoose";
+// (node:15846) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead. (Use `node --trace-deprecation ...` to show where the warning was created)
+//Mongoose is now at v5.4.13. Per their docs, these are the fixes for the deprecation warnings...
+mongoose.set('useNewUrlParser', true);
+mongoose.set('useFindAndModify', false);
+mongoose.set('useCreateIndex', true);
+
 
 import Connection from './database/db.js';
 import Routes from './routes/route.js';
 
 
 dotenv.config();
+
 const app = express();
 
 const PORT = 8000;

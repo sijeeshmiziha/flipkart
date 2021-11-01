@@ -1,12 +1,12 @@
 import mongoose from "mongoose"
 
-const OrderSchema=mongoose.Schema({
+export const OrderSchema=mongoose.Schema({
 
     isPaid:Boolean,
     amount:Number,
     razorpay:{
-        orderId:String,
-        paymentId:String,
+        order_id:String,
+        payment_id:String,
         signature:String,
     },
 

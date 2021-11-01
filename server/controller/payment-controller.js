@@ -1,15 +1,14 @@
-import Order from "../model/orderSchema";
+import Order from "../model/orderSchema.js";
 import Razorpay from "razorpay";
-import Order from "../model/orderSchema";
 
 
-export const createOder = (request, response) => {
+export const createOrder = (request, response) => {
   try {
     const instance = (instance = new Razorpay({
       key_id: process.env.RAZORPAY_KEY_ID,
       key_secret: process.env.RAZORPAY_KEY_SECRET,
     }));
-
+   console.log(request.body);
     const options = {
       amount: request.body.price,
       currency: "INR",
@@ -22,16 +21,18 @@ export const createOder = (request, response) => {
   }
 };
 
-export const payOder = (request, response) => {
+export const payOrder = async (request, response) => {
+  // console.log("triiggerd payOder");
+  // console.log(request.body);
   try {
     const { amount, razorpayPaymentId, razorpayOrderId, razorpaySignature } =
       request.body;
-    const newOrder = Order({
+    const newOrder = Order.create({
       isPaid: true,
       amount: amount,
       razorpay: {
-        paymentId: razorpayPaymentId,
-        orderId: razorpayOrderId,
+        order_id: razorpayOrderId,
+        payment_id: razorpayPaymentId,
         signature: razorpaySignature,
       },
     });
@@ -41,7 +42,8 @@ export const payOder = (request, response) => {
   }
 };
 
-export const paymentResponse=(request,response)=>{
- const orders=Order.find();
+export const paymentResponse= async(request,response)=>{
+ const orders=await Order.find();
+ console.log(orders);
  response.send(orders);
 }
