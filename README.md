@@ -1,7 +1,7 @@
 
 # Flipkar Clone MERN stack 
 
-Sijeesh Miziha's Flipkart Clone is done with top-notch features for the entrepreneur startups like Flipkart it has RazorPay Integration and get money from anywhere. Trioangle gives Flipkart clone with the best features in mobile, web, and iOS platforms, Completely responsive design using Material UI.
+Sijeesh Miziha's Flipkart Clone is done with top-notch features for the entrepreneur startups like Flipkart it has RazorPay Integration and get money from anywhere. This Flipkart clone with the best features in mobile, web, and iOS platforms, Completely responsive design using Material UI.
 - 🧪 **Kindly Please Support Me**
   - I can provide brand-free products and full technical support for 1 year along with 1-year free update support and moreover
 - 👁 **Well typed**
